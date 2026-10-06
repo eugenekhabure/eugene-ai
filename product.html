@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Product — Eugene AI</title><meta name="description" content="Eugene AI product details.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%2327d3f0'/%3E%3Ccircle cx='50' cy='50' r='13' fill='%23050d24'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050d24;--surf:#0b1938;--line:rgba(170,200,255,.16);--text:#eef3ff;--dim:#9fb0d0;--brass:#27d3f0;--ink:#03121f;--bub:#12275a;--wa:#0f5a73;--serif:'Instrument Serif',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.05}
+h1{font-size:clamp(44px,7vw,92px)} h2{font-size:clamp(32px,4.4vw,56px)}
+em{color:var(--brass)}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--brass);background:var(--brass);color:var(--ink);cursor:pointer;font-family:inherit;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)} .btn.ghost{background:none;color:var(--text);border-color:var(--line)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:26px}
+.brand i{width:20px;height:20px;border-radius:50%;background:var(--brass);position:relative}.brand i::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--bg)}
+.links{display:flex;gap:30px;font-size:15px;color:var(--dim)}.links a:hover{color:var(--text)}
+@media(max-width:760px){.links{display:none}}
+.hero{padding:88px 0 96px;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero p.sub{font-size:19px;color:var(--dim);max-width:30em;margin:26px 0 34px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.chat{background:var(--surf);border:1px solid var(--line);border-radius:26px;padding:20px;max-width:430px;margin-left:auto;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+.chat-top{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line);font-weight:600;font-size:15px}
+.chat-top small{display:block;font-weight:400;color:var(--dim);font-size:12px}
+.av{width:38px;height:38px;border-radius:50%;background:var(--brass);color:var(--ink);display:grid;place-items:center;font-family:var(--serif);font-size:20px}
+.msgs{display:flex;flex-direction:column;gap:10px;padding:18px 0 6px;min-height:290px}
+.m{max-width:84%;padding:10px 14px;border-radius:16px;font-size:14.5px;line-height:1.45;opacity:0;transform:translateY(8px);animation:in .5s forwards}
+.m.g{background:var(--bub);border-bottom-left-radius:4px}.m.b{background:var(--wa);align-self:flex-end;border-bottom-right-radius:4px}
+.m.pay{border:1px solid var(--brass);background:none}.m b{color:var(--brass);font-weight:600}
+@keyframes in{to{opacity:1;transform:none}}
+.m:nth-child(1){animation-delay:.3s}.m:nth-child(2){animation-delay:1.4s}.m:nth-child(3){animation-delay:2.6s}.m:nth-child(4){animation-delay:3.8s}.m:nth-child(5){animation-delay:5s}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:56px}.chat{margin:0}}
+.strip{border-block:1px solid var(--line);padding:22px 0;color:var(--dim);font-size:15px}
+.strip .wrap{display:flex;gap:14px 44px;flex-wrap:wrap;justify-content:space-between}
+section{padding:110px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
+.head p{color:var(--dim);font-size:18px;max-width:32em}
+@media(max-width:800px){.head{grid-template-columns:1fr}section{padding:76px 0}}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tab{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--dim);font:500 14px var(--sans);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.row{display:grid;grid-template-columns:190px 1fr auto 24px;gap:24px;align-items:center;width:100%;text-align:left;padding:26px 6px;border:0;border-bottom:1px solid var(--line);background:none;color:inherit;font:inherit;cursor:pointer;transition:padding .25s,background .25s}
+.row:hover{padding-left:18px;background:color-mix(in srgb,var(--brass) 7%,transparent)}
+.row h3{font-size:32px}.row p{color:var(--dim);font-size:15px}
+.st{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:7px}.st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brass)}.st.live::before{background:#4fbf7a}.st.new::before{background:#7fb8d9}
+.arr{color:var(--brass);font-size:20px}
+@media(max-width:760px){.row{grid-template-columns:1fr auto;gap:6px 12px}.row p{grid-column:1/-1;order:3}.arr{display:none}}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.pillar{padding:34px 30px 10px 0}.pillar+.pillar{padding-left:30px;border-left:1px solid var(--line)}
+.pillar h3{font-size:30px;margin-bottom:12px}.pillar p{color:var(--dim)}
+@media(max-width:800px){.pillars{grid-template-columns:1fr}.pillar,.pillar+.pillar{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px}
+.contact dl{margin-top:34px;display:grid;gap:20px}.contact dt{color:var(--dim);font-size:13px}.contact dd{font-size:18px}
+form{background:var(--surf);border:1px solid var(--line);border-radius:22px;padding:30px;display:grid;gap:16px}
+label{font-size:13px;color:var(--dim);display:grid;gap:6px}
+input,select,textarea{background:transparent;border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--text);font:inherit}
+select option{background:var(--surf);color:var(--text)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brass)}
+@media(max-width:860px){.contact{grid-template-columns:1fr;gap:40px}}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+dialog{margin:auto;width:min(760px,calc(100% - 28px));max-height:88vh;overflow:auto;background:var(--surf);color:var(--text);border:1px solid var(--line);border-radius:24px;padding:38px}
+dialog::backdrop{background:rgba(5,10,8,.7);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .3s ease}@keyframes pop{from{opacity:0;transform:translateY(16px)}}
+.x{float:right;background:none;border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:18px}
+dialog h3{font-size:46px;margin:6px 0 10px}dialog .tg{color:var(--dim);font-size:18px;max-width:34em}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:30px 0;border-top:1px solid var(--line)}
+.feat div{padding:18px 18px 18px 0;border-bottom:1px solid var(--line)}.feat div:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+.feat b{display:block;font-weight:600}.feat span{color:var(--dim);font-size:14.5px}
+ol.flow{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s;margin-bottom:30px}
+ol.flow li{counter-increment:s;font-size:14px;color:var(--dim)}ol.flow li::before{content:counter(s);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid var(--brass);color:var(--brass);margin-bottom:8px;font-size:13px}
+@media(max-width:620px){.feat,ol.flow{grid-template-columns:1fr}.feat div:nth-child(even){padding-left:0;border-left:0}dialog{padding:26px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}}
+.brand img{height:62px;width:auto;display:block}
+.hl{width:min(460px,100%);height:auto;display:block;margin:0 0 30px -14px}
+.fl{height:96px;width:auto}
+.pl{width:190px;height:76px;border-radius:12px;object-fit:cover;display:block;border:1px solid var(--line)}
+.pl.big{width:280px;height:112px;margin:8px 0 16px}
+.sr{position:absolute;left:-9999px}
+@media(max-width:760px){.pl{width:150px;height:60px}.brand img{height:50px}.nav{height:70px}.hl{width:300px}}
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.art{text-align:left;background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:26px;color:inherit;font:inherit;cursor:pointer;display:flex;flex-direction:column;gap:12px;transition:border-color .25s,transform .25s}
+.art:hover{border-color:var(--brass);transform:translateY(-3px)}
+.art small{color:var(--brass);font-size:13px}.art h3{font-size:28px}.art p{color:var(--dim);font-size:15px}.art span.go{margin-top:auto;color:var(--brass);font-size:14px;font-weight:600}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:64px}
+.about p{color:var(--dim);font-size:18px;margin-top:18px;max-width:32em}
+.facts{display:grid;align-content:start;border-top:1px solid var(--line)}.facts div{padding:20px 0;border-bottom:1px solid var(--line)}.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:32px}.facts span{color:var(--dim);font-size:15px}
+.body p{color:var(--dim);margin-top:14px;font-size:17px;max-width:36em}
+@media(max-width:860px){.arts{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:36px}}
+</style></head><body>
+<header><div class="wrap nav">
+<a class="brand" href="index.html#" aria-label="Eugene AI home"><img data-eug alt="Eugene AI"></a>
+<nav class="links"><a href="index.html#products">Products</a><a href="index.html#platform">Platform</a><a href="index.html#origin">Origin</a><a href="index.html#insights">Insights</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav>
+<a class="btn" href="index.html#contact">Book a demo</a>
+</div></header>
+<main class="wrap" id="m" style="padding:64px 0 110px"></main>
+<footer><div class="wrap"><img data-eug class="fl" alt="Eugene AI"><span>Built local. Runs everywhere.</span><span>© 2026 Eugene AI, Kenya</span></div></footer>
+<script>
+const L={"Vdara":"logos/Vdara.jpg","Timetable-AI":"logos/Timetable-AI.jpg","School-AI":"logos/School-AI.jpg","Invent-AI":"logos/Invent-AI.jpg","Apophis-AI":"logos/Apophis-AI.jpg","eLea":"logos/eLea.jpg","Xerxes":"logos/Xerxes.jpg","Ilobi":"logos/Ilobi.jpg","Tapify":"logos/Tapify.jpg","Coop-AI":"logos/Coop-AI.jpg"};
+const U={"Vdara": "vdara.co.ke", "Timetable-AI": "timetable-ai.co.ke", "School-AI": "school-ai.co.ke", "Invent-AI": "invent-ai.co.ke", "Apophis-AI": "apophis.co.ke", "eLea": "elea.co.ke", "Xerxes": "xerxes.co.ke", "Ilobi": "ilobi.co.ke", "Tapify": "tapify.co.ke", "Coop-AI": "coop-ai.co.ke"};
+document.querySelectorAll("[data-eug]").forEach(i=>i.src="eugene-ai-logo.png");
+const P=[
+["Vdara","Education","Live","School bus tracking with geofencing, parent alerts and route intelligence.",["Live GPS|Every bus on one map, with trip playback.","Parent alerts|Pickup and drop-off messages, no phone calls.","Geofencing|Know when a bus enters or leaves a zone.","Route insight|Spot delays before parents complain."],["Bus starts route","System tracks","Parents notified","Admin reviews trip"]],
+["Timetable-AI","Education","Live","Timetables generated in minutes, with clashes caught before they reach staff.",["Auto-generate|A full term timetable from your constraints.","Clash detection|Teacher, room and class conflicts flagged.","Load balancing|Fair teacher workloads across the week.","Quick edits|Change one slot, the rest re-checks itself."],["Set constraints","Generate draft","Adjust slots","Publish"]],
+["School-AI","Education","Beta","A complete school system: fees, attendance, exams, staff and a parent portal.",["Fees|Balances and M-Pesa reconciliation.","Attendance|Absence alerts go to parents automatically.","Exams|Grade entry and report cards.","Staff|Records, leave and payroll inputs."],["Import students","Run the term","Enter grades","Parents view results"]],
+["Invent-AI","Hospitality","Live","Inventory and recipe costing for restaurants and hotels, with restocking forecasts.",["Recipe costing|True dish cost as prices change.","Waste tracking|See where stock disappears.","Forecasts|Order before you run out.","Live counts|Stock across every store."],["Log recipes","Track usage","Get forecasts","Cut waste"]],
+["Apophis-AI","Hospitality","Live","A WhatsApp concierge that handles bookings, guest requests and M-Pesa payments.",["Bookings|Availability and reservations in chat.","Guest requests|Housekeeping and room service routed instantly.","M-Pesa|Guests pay in the conversation.","PMS sync|Stays in step with your hotel system."],["Guest messages","AI replies","Staff alerted","Paid and served"]],
+["eLea","Hospitality","New","QR menus with ordering, table management and payment from the guest's phone.",["Scan and order|No app, no waiting for a waiter.","Table view|Occupied, ordering, ready to bill.","Pay at table|Settle from the phone.","Menu edits|Change prices or sell out items instantly."],["Scan QR","Order placed","Table tracked","Pay in app"]],
+["Xerxes","Governance","Live","Board management with secure packs, e-signatures, minutes and SaccoBot.",["E-signatures|Resolutions signed without printing.","Board packs|Shared securely before each meeting.","Minutes|Captured and filed per meeting.","SaccoBot|WhatsApp answers for SACCO members."],["Schedule meeting","Meet and decide","Sign off","Archive for audit"]],
+["Ilobi","Governance","Beta","Visitor management with pre-registration, host alerts and badge printing.",["Pre-registration|Approve visitors before they arrive.","Host alerts|Hosts told the moment a visitor checks in.","Badges|Printed at the gate.","Multi-site|Separate rules for every site."],["Pre-register","Check in","Host notified","Check out logged"]],
+["Tapify","Commerce","Live","WhatsApp ordering with catalogue, cart, M-Pesa checkout and delivery updates.",["Catalogue|Browse and order inside the chat.","Cart|A familiar basket, built for messaging.","M-Pesa checkout|Orders confirmed on payment.","Delivery updates|Customers see when it arrives."],["Customer messages","Orders and pays","Shop confirms","Delivered and tracked"]],
+["Coop-AI","Commerce","New","A chatbot for SACCOs that answers member questions about loans and savings, day or night.",["Member queries|Balances and statements in seconds.","Loans|Apply and track status on WhatsApp.","Savings|Contributions without a branch visit.","Handover|Complex cases passed to staff."],["Member asks","Bot answers","Escalate if needed","Member served"]]
+];
+const slug=(new URLSearchParams(location.search).get('p')||'vdara').toLowerCase();
+let k=P.findIndex(x=>x[0].toLowerCase()===slug);if(k<0)k=0;const p=P[k];
+document.title=p[0]+' — Eugene AI';document.querySelector('meta[name=description]').content=p[3];
+const rel=P.filter((x,i)=>i!==k).sort((a,b)=>(b[1]===p[1])-(a[1]===p[1])).slice(0,3);
+document.getElementById('m').innerHTML=`<p style="color:var(--dim);font-size:14px"><a href="index.html">Eugene AI</a> / <a href="index.html#products">Products</a> / ${p[0]}</p>
+<img class="pl big" style="margin-top:26px" src="${L[p[0]]}" alt="${p[0]} logo"><span class="st ${p[2].toLowerCase()}">${p[2]} · ${p[1]}</span>
+<h1 style="font-size:clamp(42px,6vw,76px);margin:12px 0 14px">${p[0]}</h1><p style="color:var(--dim);font-size:20px;max-width:34em">${p[3]}</p>
+<p class="acts" style="margin-top:28px"><a class="btn" href="index.html#contact">Book a demo of ${p[0]}</a><a class="btn ghost" href="https://${U[p[0]]}" target="_blank" rel="noopener">Visit ${U[p[0]]}</a></p>
+<div class="feat" style="margin:56px 0">${p[4].map(f=>{const[a,b]=f.split('|');return`<div><b>${a}</b><span>${b}</span></div>`}).join('')}</div>
+<h2 style="font-size:38px;margin-bottom:24px">From first message to done.</h2><ol class="flow">${p[5].map(s=>`<li>${s}</li>`).join('')}</ol>
+<h2 style="font-size:38px;margin:70px 0 24px">More from Eugene AI.</h2>
+<div class="arts">${rel.map(o=>`<a class="art" href="product.html?p=${o[0].toLowerCase()}"><img class="pl" style="width:100%;height:auto;aspect-ratio:5/2" src="${L[o[0]]}" alt="${o[0]}"><p>${o[3]}</p><span class="go">View product</span></a>`).join('')}</div>`;
+</script></body></html>

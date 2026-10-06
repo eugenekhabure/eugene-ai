@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eugene AI — Software that runs on WhatsApp and M-Pesa</title>
+<meta name="description" content="Eugene AI builds software for schools, hotels, SACCOs and shops across East Africa.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%2327d3f0'/%3E%3Ccircle cx='50' cy='50' r='13' fill='%23050d24'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050d24;--surf:#0b1938;--line:rgba(170,200,255,.16);--text:#eef3ff;--dim:#9fb0d0;--brass:#27d3f0;--ink:#03121f;--bub:#12275a;--wa:#0f5a73;--serif:'Instrument Serif',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.05}
+h1{font-size:clamp(44px,7vw,92px)} h2{font-size:clamp(32px,4.4vw,56px)}
+em{color:var(--brass)}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--brass);background:var(--brass);color:var(--ink);cursor:pointer;font-family:inherit;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)} .btn.ghost{background:none;color:var(--text);border-color:var(--line)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:26px}
+.brand i{width:20px;height:20px;border-radius:50%;background:var(--brass);position:relative}.brand i::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--bg)}
+.links{display:flex;gap:30px;font-size:15px;color:var(--dim)}.links a:hover{color:var(--text)}
+@media(max-width:760px){.links{display:none}}
+.hero{padding:88px 0 96px;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero p.sub{font-size:19px;color:var(--dim);max-width:30em;margin:26px 0 34px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.chat{background:var(--surf);border:1px solid var(--line);border-radius:26px;padding:20px;max-width:430px;margin-left:auto;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+.chat-top{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line);font-weight:600;font-size:15px}
+.chat-top small{display:block;font-weight:400;color:var(--dim);font-size:12px}
+.av{width:38px;height:38px;border-radius:50%;background:var(--brass);color:var(--ink);display:grid;place-items:center;font-family:var(--serif);font-size:20px}
+.msgs{display:flex;flex-direction:column;gap:10px;padding:18px 0 6px;min-height:290px}
+.m{max-width:84%;padding:10px 14px;border-radius:16px;font-size:14.5px;line-height:1.45;opacity:0;transform:translateY(8px);animation:in .5s forwards}
+.m.g{background:var(--bub);border-bottom-left-radius:4px}.m.b{background:var(--wa);align-self:flex-end;border-bottom-right-radius:4px}
+.m.pay{border:1px solid var(--brass);background:none}.m b{color:var(--brass);font-weight:600}
+@keyframes in{to{opacity:1;transform:none}}
+.m:nth-child(1){animation-delay:.3s}.m:nth-child(2){animation-delay:1.4s}.m:nth-child(3){animation-delay:2.6s}.m:nth-child(4){animation-delay:3.8s}.m:nth-child(5){animation-delay:5s}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:56px}.chat{margin:0}}
+.strip{border-block:1px solid var(--line);padding:22px 0;color:var(--dim);font-size:15px}
+.strip .wrap{display:flex;gap:14px 44px;flex-wrap:wrap;justify-content:space-between}
+section{padding:110px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
+.head p{color:var(--dim);font-size:18px;max-width:32em}
+@media(max-width:800px){.head{grid-template-columns:1fr}section{padding:76px 0}}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tab{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--dim);font:500 14px var(--sans);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.row{display:grid;grid-template-columns:190px 1fr auto 24px;gap:24px;align-items:center;width:100%;text-align:left;padding:26px 6px;border:0;border-bottom:1px solid var(--line);background:none;color:inherit;font:inherit;cursor:pointer;transition:padding .25s,background .25s}
+.row:hover{padding-left:18px;background:color-mix(in srgb,var(--brass) 7%,transparent)}
+.row h3{font-size:32px}.row p{color:var(--dim);font-size:15px}
+.st{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:7px}.st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brass)}.st.live::before{background:#4fbf7a}.st.new::before{background:#7fb8d9}
+.arr{color:var(--brass);font-size:20px}
+@media(max-width:760px){.row{grid-template-columns:1fr auto;gap:6px 12px}.row p{grid-column:1/-1;order:3}.arr{display:none}}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.pillar{padding:34px 30px 10px 0}.pillar+.pillar{padding-left:30px;border-left:1px solid var(--line)}
+.pillar h3{font-size:30px;margin-bottom:12px}.pillar p{color:var(--dim)}
+@media(max-width:800px){.pillars{grid-template-columns:1fr}.pillar,.pillar+.pillar{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px}
+.contact dl{margin-top:34px;display:grid;gap:20px}.contact dt{color:var(--dim);font-size:13px}.contact dd{font-size:18px}
+form{background:var(--surf);border:1px solid var(--line);border-radius:22px;padding:30px;display:grid;gap:16px}
+label{font-size:13px;color:var(--dim);display:grid;gap:6px}
+input,select,textarea{background:transparent;border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--text);font:inherit}
+select option{background:var(--surf);color:var(--text)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brass)}
+@media(max-width:860px){.contact{grid-template-columns:1fr;gap:40px}}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+dialog{margin:auto;width:min(760px,calc(100% - 28px));max-height:88vh;overflow:auto;background:var(--surf);color:var(--text);border:1px solid var(--line);border-radius:24px;padding:38px}
+dialog::backdrop{background:rgba(5,10,8,.7);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .3s ease}@keyframes pop{from{opacity:0;transform:translateY(16px)}}
+.x{float:right;background:none;border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:18px}
+dialog h3{font-size:46px;margin:6px 0 10px}dialog .tg{color:var(--dim);font-size:18px;max-width:34em}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:30px 0;border-top:1px solid var(--line)}
+.feat div{padding:18px 18px 18px 0;border-bottom:1px solid var(--line)}.feat div:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+.feat b{display:block;font-weight:600}.feat span{color:var(--dim);font-size:14.5px}
+ol.flow{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s;margin-bottom:30px}
+ol.flow li{counter-increment:s;font-size:14px;color:var(--dim)}ol.flow li::before{content:counter(s);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid var(--brass);color:var(--brass);margin-bottom:8px;font-size:13px}
+@media(max-width:620px){.feat,ol.flow{grid-template-columns:1fr}.feat div:nth-child(even){padding-left:0;border-left:0}dialog{padding:26px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}}
+.brand img{height:62px;width:auto;display:block}
+.hl{width:min(460px,100%);height:auto;display:block;margin:0 0 30px -14px}
+.fl{height:96px;width:auto}
+.pl{width:190px;height:76px;border-radius:12px;object-fit:cover;display:block;border:1px solid var(--line)}
+.pl.big{width:280px;height:112px;margin:8px 0 16px}
+.sr{position:absolute;left:-9999px}
+@media(max-width:760px){.pl{width:150px;height:60px}.brand img{height:50px}.nav{height:70px}.hl{width:300px}}
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.art{text-align:left;background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:26px;color:inherit;font:inherit;cursor:pointer;display:flex;flex-direction:column;gap:12px;transition:border-color .25s,transform .25s}
+.art:hover{border-color:var(--brass);transform:translateY(-3px)}
+.art small{color:var(--brass);font-size:13px}.art h3{font-size:28px}.art p{color:var(--dim);font-size:15px}.art span.go{margin-top:auto;color:var(--brass);font-size:14px;font-weight:600}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:64px}
+.about p{color:var(--dim);font-size:18px;margin-top:18px;max-width:32em}
+.facts{display:grid;align-content:start;border-top:1px solid var(--line)}.facts div{padding:20px 0;border-bottom:1px solid var(--line)}.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:32px}.facts span{color:var(--dim);font-size:15px}
+.body p{color:var(--dim);margin-top:14px;font-size:17px;max-width:36em}
+@media(max-width:860px){.arts{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:36px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#" aria-label="Eugene AI home"><img data-eug alt="Eugene AI"></a>
+<nav class="links"><a href="#products">Products</a><a href="#platform">Platform</a><a href="#origin">Origin</a><a href="#insights">Insights</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact">Book a demo</a>
+</div></header>
+
+<main>
+<div class="wrap hero">
+<div>
+<img data-eug class="hl" alt="Eugene AI — Smarter solutions, greater possibilities">
+<h1>Software that works the way <em>East Africa</em> already does.</h1>
+<p class="sub">Ten products for schools, hotels, SACCOs and shops. Your customers order, ask and pay on WhatsApp and M-Pesa. Eugene AI makes the business behind it run just as smoothly.</p>
+<div class="acts"><a class="btn" href="#products">Explore the products</a><a class="btn ghost" href="#contact">Book a demo</a></div>
+</div>
+<div class="chat" aria-label="Example WhatsApp conversation with a hotel concierge">
+<div class="chat-top"><div class="av">A</div><div>Apophis-AI concierge<small>Lakeview Hotel · online</small></div></div>
+<div class="msgs">
+<div class="m g">Hi, do you have a double room this Friday?</div>
+<div class="m b">Yes, a lake-view double is free Fri–Sun at KES 9,500 a night. Shall I hold it?</div>
+<div class="m g">Yes please. Two nights.</div>
+<div class="m b pay">Held for 2 nights. Pay <b>KES 19,000</b> by M-Pesa to confirm. I've sent the prompt to your phone.</div>
+<div class="m b">Payment received. You're booked. See you Friday.</div>
+</div></div>
+</div>
+
+<div class="strip"><div class="wrap"><span>WhatsApp-native</span><span>M-Pesa checkout built in</span><span>Kenya Data Protection Act aware</span><span>Built and supported in Nairobi</span></div></div>
+
+<section id="products"><div class="wrap">
+<div class="head"><h2>Ten products, grouped by the work they do.</h2><p>Pick the part of your organisation that needs help first. Every product shares the same data layer, so they get more useful together.</p></div>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div id="list"></div>
+</div></section>
+
+<section id="platform" style="border-top:1px solid var(--line)"><div class="wrap">
+<div class="head"><h2>One intelligence layer underneath.</h2><p>The products look different on the surface. Underneath, they share the same three foundations.</p></div>
+<div class="pillars">
+<div class="pillar"><h3>Chat first</h3><p>Customers, guests, parents and members get answers on WhatsApp. No app to download, no login to forget.</p></div>
+<div class="pillar"><h3>Money that reconciles</h3><p>M-Pesa payments are matched to the right booking, fee or order automatically, so nobody types receipts into a spreadsheet.</p></div>
+<div class="pillar"><h3>Forecasts, not just reports</h3><p>Stock, timetables and routes are predicted ahead of time, so problems show up before your customers notice them.</p></div>
+</div></div></section>
+
+<section id="origin" style="border-top:1px solid var(--line)"><div class="wrap">
+<div class="head"><h2>Built where the work actually happens.</h2><p>Eugene AI starts from a simple observation: your customers already chat, pay and ask questions on their phones.</p></div>
+<div class="pillars">
+<div class="pillar"><h3>Where we started</h3><p>In Nairobi, with organisations asking the same question again and again: can this just work on WhatsApp?</p></div>
+<div class="pillar"><h3>What we noticed</h3><p>Most business software asks people to log in somewhere new. Guests, parents and members would rather message and pay the way they already do.</p></div>
+<div class="pillar"><h3>What we built</h3><p>Ten products on one shared layer, each designed around WhatsApp, M-Pesa and the realities of running an East African organisation.</p></div>
+</div></div></section>
+<section id="insights" style="border-top:1px solid var(--line)"><div class="wrap">
+<div class="head"><h2>Notes from the field.</h2><p>Practical writing for owners, administrators and managers who want their operations to run with less effort.</p></div>
+<div class="arts" id="arts"></div>
+</div></section>
+<section id="about" style="border-top:1px solid var(--line)"><div class="wrap about">
+<div><h2>A Nairobi software company for East African organisations.</h2><p>Eugene AI designs, builds and supports every product itself, so the people who answer your questions are the people who wrote the code.</p><p>We work with schools, hotels, restaurants, SACCOs, boards and shops, and we start every project with your own scenario rather than a generic slide deck.</p></div>
+<div class="facts"><div><b>Nairobi, Kenya</b><span>Where we build and support everything</span></div><div><b>Ten products</b><span>Across education, hospitality, governance and commerce</span></div><div><b>One working day</b><span>Our reply time for demo requests</span></div></div>
+</div></section>
+<section id="contact" style="border-top:1px solid var(--line)"><div class="wrap contact">
+<div>
+<h2>Tell us what you run. We'll show you the fit.</h2>
+<p style="color:var(--dim);margin-top:18px;max-width:28em">Send a few details and we'll reply within one working day to set up a demo on your own scenario.</p>
+<dl><div><dt>Phone</dt><dd><a href="tel:0112710373">0112 710 373</a></dd></div><div><dt>Email</dt><dd><a href="mailto:eugene@eugene-ai.co.ke">eugene@eugene-ai.co.ke</a></dd></div><div><dt>Based in</dt><dd>Nairobi, Kenya</dd></div></dl>
+</div>
+<form id="f">
+<label>Full name<input name="n" required autocomplete="name"></label>
+<label>Email<input type="email" name="e" required autocomplete="email"></label>
+<label>Product of interest<select name="p" id="sel"><option value="">Not sure yet</option></select></label>
+<label>What would you like to improve?<textarea name="m" rows="4" required></textarea></label>
+<button class="btn" type="submit">Request a demo</button>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><img data-eug class="fl" alt="Eugene AI"><span>Built local. Runs everywhere.</span><span>© 2026 Eugene AI, Kenya</span></div></footer>
+
+<dialog id="dlg" aria-labelledby="dn"><button class="x" id="cl" aria-label="Close">×</button><div id="dbody"></div></dialog>
+
+<script>
+const L={"Vdara":"logos/Vdara.jpg","Timetable-AI":"logos/Timetable-AI.jpg","School-AI":"logos/School-AI.jpg","Invent-AI":"logos/Invent-AI.jpg","Apophis-AI":"logos/Apophis-AI.jpg","eLea":"logos/eLea.jpg","Xerxes":"logos/Xerxes.jpg","Ilobi":"logos/Ilobi.jpg","Tapify":"logos/Tapify.jpg","Coop-AI":"logos/Coop-AI.jpg"};
+const E="eugene-ai-logo.png";
+document.querySelectorAll("[data-eug]").forEach(i=>i.src=E);
+const U={"Vdara": "vdara.co.ke", "Timetable-AI": "timetable-ai.co.ke", "School-AI": "school-ai.co.ke", "Invent-AI": "invent-ai.co.ke", "Apophis-AI": "apophis.co.ke", "eLea": "elea.co.ke", "Xerxes": "xerxes.co.ke", "Ilobi": "ilobi.co.ke", "Tapify": "tapify.co.ke", "Coop-AI": "coop-ai.co.ke"};
+const S={Education:'Education',Hospitality:'Hospitality',Governance:'Governance',Commerce:'Commerce'};
+const P=[
+["Vdara","Education","Live","School bus tracking with geofencing, parent alerts and route intelligence.",["Live GPS|Every bus on one map, with trip playback.","Parent alerts|Pickup and drop-off messages, no phone calls.","Geofencing|Know when a bus enters or leaves a zone.","Route insight|Spot delays before parents complain."],["Bus starts route","System tracks","Parents notified","Admin reviews trip"]],
+["Timetable-AI","Education","Live","Timetables generated in minutes, with clashes caught before they reach staff.",["Auto-generate|A full term timetable from your constraints.","Clash detection|Teacher, room and class conflicts flagged.","Load balancing|Fair teacher workloads across the week.","Quick edits|Change one slot, the rest re-checks itself."],["Set constraints","Generate draft","Adjust slots","Publish"]],
+["School-AI","Education","Beta","A complete school system: fees, attendance, exams, staff and a parent portal.",["Fees|Balances and M-Pesa reconciliation.","Attendance|Absence alerts go to parents automatically.","Exams|Grade entry and report cards.","Staff|Records, leave and payroll inputs."],["Import students","Run the term","Enter grades","Parents view results"]],
+["Invent-AI","Hospitality","Live","Inventory and recipe costing for restaurants and hotels, with restocking forecasts.",["Recipe costing|True dish cost as prices change.","Waste tracking|See where stock disappears.","Forecasts|Order before you run out.","Live counts|Stock across every store."],["Log recipes","Track usage","Get forecasts","Cut waste"]],
+["Apophis-AI","Hospitality","Live","A WhatsApp concierge that handles bookings, guest requests and M-Pesa payments.",["Bookings|Availability and reservations in chat.","Guest requests|Housekeeping and room service routed instantly.","M-Pesa|Guests pay in the conversation.","PMS sync|Stays in step with your hotel system."],["Guest messages","AI replies","Staff alerted","Paid and served"]],
+["eLea","Hospitality","New","QR menus with ordering, table management and payment from the guest's phone.",["Scan and order|No app, no waiting for a waiter.","Table view|Occupied, ordering, ready to bill.","Pay at table|Settle from the phone.","Menu edits|Change prices or sell out items instantly."],["Scan QR","Order placed","Table tracked","Pay in app"]],
+["Xerxes","Governance","Live","Board management with secure packs, e-signatures, minutes and SaccoBot.",["E-signatures|Resolutions signed without printing.","Board packs|Shared securely before each meeting.","Minutes|Captured and filed per meeting.","SaccoBot|WhatsApp answers for SACCO members."],["Schedule meeting","Meet and decide","Sign off","Archive for audit"]],
+["Ilobi","Governance","Beta","Visitor management with pre-registration, host alerts and badge printing.",["Pre-registration|Approve visitors before they arrive.","Host alerts|Hosts told the moment a visitor checks in.","Badges|Printed at the gate.","Multi-site|Separate rules for every site."],["Pre-register","Check in","Host notified","Check out logged"]],
+["Tapify","Commerce","Live","WhatsApp ordering with catalogue, cart, M-Pesa checkout and delivery updates.",["Catalogue|Browse and order inside the chat.","Cart|A familiar basket, built for messaging.","M-Pesa checkout|Orders confirmed on payment.","Delivery updates|Customers see when it arrives."],["Customer messages","Orders and pays","Shop confirms","Delivered and tracked"]],
+["Coop-AI","Commerce","New","A chatbot for SACCOs that answers member questions about loans and savings, day or night.",["Member queries|Balances and statements in seconds.","Loans|Apply and track status on WhatsApp.","Savings|Contributions without a branch visit.","Handover|Complex cases passed to staff."],["Member asks","Bot answers","Escalate if needed","Member served"]]
+];
+const tabs=document.getElementById('tabs'),list=document.getElementById('list'),sel=document.getElementById('sel'),dlg=document.getElementById('dlg');
+let cur='Education';
+function draw(){
+ tabs.innerHTML=Object.keys(S).map(k=>`<button class="tab" role="tab" aria-selected="${k==cur}" data-k="${k}">${k}</button>`).join('');
+ list.innerHTML=P.map((p,i)=>p[1]==cur?`<a class="row" href="product.html?p=${p[0].toLowerCase()}"><img class="pl" src="${L[p[0]]}" alt="${p[0]}"><p>${p[3]}</p><span class="st ${p[2].toLowerCase()}">${p[2]}</span><span class="arr" aria-hidden="true">›</span></a>`:'').join('');
+}
+tabs.onclick=e=>{const k=e.target.dataset.k;if(k){cur=k;draw()}};
+list.onclick=e=>{const r=e.target.closest('.row');if(!r||r.tagName==='A')return;const p=P[r.dataset.i];
+ document.getElementById('dbody').innerHTML=`<img class="pl big" src="${L[p[0]]}" alt=""><span class="st ${p[2].toLowerCase()}">${p[2]} · ${p[1]}</span><h3 id="dn" class="sr">${p[0]}</h3><p class="tg">${p[3]}</p><div class="feat">${p[4].map(f=>{const[a,b]=f.split('|');return`<div><b>${a}</b><span>${b}</span></div>`}).join('')}</div><ol class="flow">${p[5].map(s=>`<li>${s}</li>`).join('')}</ol><div class="acts"><button class="btn" id="dd">Book a demo of ${p[0]}</button>${U[p[0]]?`<a class="btn ghost" href="https://${U[p[0]]}" target="_blank" rel="noopener">Visit ${U[p[0]]}</a>`:''}</div>`;
+ dlg.showModal();
+ document.getElementById('dd').onclick=()=>{dlg.close();sel.value=p[0];location.hash='contact'};
+};
+document.getElementById('cl').onclick=()=>dlg.close();
+dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+P.forEach(p=>sel.add(new Option(p[0],p[0])));
+document.getElementById('f').onsubmit=e=>{e.preventDefault();const d=new FormData(e.target);
+ location.href='mailto:eugene@eugene-ai.co.ke?subject='+encodeURIComponent('Demo request: '+(d.get('p')||'General'))+'&body='+encodeURIComponent(`Name: ${d.get('n')}\nEmail: ${d.get('e')}\n\n${d.get('m')}`)};
+const A=[
+["Messaging","Why WhatsApp is the front desk you already have","Customers message businesses all day. Meet them there instead of building another app.",["Most people already know how to ask a question on WhatsApp. They do not need to download anything, remember a password or learn a new screen.","That makes it a natural front desk. A guest can check room availability, a parent can ask about fees and a customer can order from a catalogue, all in the same chat they use for everything else.","The real work is behind the chat: answering accurately, passing complex cases to a person and keeping a record. That is the part we build."]],
+["Payments","Matching M-Pesa payments without a spreadsheet","Every payment should land against the right booking, fee or order without anyone retyping receipts.",["When payments arrive as separate M-Pesa messages, someone usually matches them by hand. That is slow, and mistakes are easy to miss until month end.","Tying each payment request to a specific booking, invoice or order means the match happens at the moment of payment. Staff see a confirmed status instead of a pile of receipts.","Anything that does not match is flagged immediately, so exceptions get handled while the customer is still there."]],
+["Schools","A term timetable in an afternoon, not a week","Clashes between teachers, rooms and classes are the slow part. Software can catch them as you build.",["Building a timetable by hand means juggling teacher availability, room limits and subject rules at once. One late change can ripple through the whole week.","Setting those rules up once lets the system propose a draft and flag every clash. You then adjust individual slots and the rest re-checks itself.","The result is more time for the decisions that need a person, such as how to balance workloads fairly."]]];
+const ar=document.getElementById('arts');
+ar.innerHTML=A.map((a,i)=>`<button class="art" data-a="${i}"><small>${a[0]}</small><h3>${a[1]}</h3><p>${a[2]}</p><span class="go">Read article</span></button>`).join('');
+ar.onclick=e=>{const b=e.target.closest('.art');if(!b)return;const a=A[b.dataset.a];
+ document.getElementById('dbody').innerHTML=`<span class="st">${a[0]}</span><h3 id="dn" style="font-size:38px;margin:8px 0 6px">${a[1]}</h3><div class="body">${a[3].map(t=>`<p>${t}</p>`).join('')}</div><button class="btn" style="margin-top:26px" id="ad">Book a demo</button>`;
+ dlg.showModal();document.getElementById('ad').onclick=()=>{dlg.close();location.hash='contact'}};
+draw();
+</script>
+</body>
+</html>
